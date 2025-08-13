@@ -1,0 +1,186 @@
+# Weather Prediction and Time Series Forecasting
+
+This repository contains code and notebooks for **weather data analysis**, **exploratory data analysis (EDA)**, **feature engineering**, and **time series forecasting** using machine learning and deep learning models. The main focus is on predicting and forecasting **sunshine hours** for the city of Rome (ROMA) using historical weather data.
+
+---
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Data](#data)
+- [Features](#features)
+- [Notebooks and Scripts](#notebooks-and-scripts)
+- [Key Analyses and Models](#key-analyses-and-models)
+- [How to Run](#how-to-run)
+- [Results and Visualizations](#results-and-visualizations)
+- [Requirements](#requirements)
+- [References](#references)
+
+---
+
+## Project Overview
+
+This project demonstrates a full workflow for weather data analysis and sunshine forecasting, including:
+
+- Data loading and cleaning
+- Exploratory data analysis (EDA)
+- Feature engineering and correlation analysis
+- Predictive modeling (Random Forest, SVM)
+- Time series forecasting with [Prophet](https://facebook.github.io/prophet/)
+- Model evaluation and interpretation
+- Visualization of results
+
+The main target variable is **ROMA_sunshine** (daily sunshine hours in Rome).
+
+---
+
+## Data
+
+- **Source:** `./datasets/weather_prediction_dataset.csv`
+- **Description:** Historical weather data for multiple cities, including Rome.
+- **Key columns:**
+  - `ROMA_sunshine` (target)
+  - Other weather variables: temperature, humidity, pressure, etc.
+
+---
+
+## Features
+
+- **Data Cleaning:** Handling missing values, duplicates, and column selection.
+- **EDA:** Distribution plots, time series plots, seasonal decomposition, moving averages, and correlation heatmaps.
+- **Feature Engineering:** Creation of moving averages, extraction of sunshine-related columns, and feature importance analysis.
+- **Modeling:**
+  - **Random Forest Regressor** for sunshine prediction
+  - **Support Vector Machine (SVM)** for regression
+  - **Prophet** for time series forecasting
+
+---
+
+## Notebooks and Scripts
+
+- **weather-prediction.ipynb**  
+  Main Jupyter notebook for data analysis, modeling, and forecasting.
+
+- **cv.py**  
+  (Placeholder for computer vision or OpenCV-related code, not the main focus here.)
+
+---
+
+## Key Analyses and Models
+
+### 1. **Exploratory Data Analysis (EDA)**
+
+- Identification of sunshine columns
+- Time series plots for ROMA_sunshine
+- Seasonal decomposition (trend, seasonality, residuals)
+- Moving averages (7-day, 30-day)
+- Correlation heatmaps and scatter plots
+
+### 2. **Predictive Modeling**
+
+- **Random Forest Regressor:**
+  - Feature scaling, training, prediction, and feature importance visualization
+  - Model saved as `rf_weather_model.pkl`
+- **Support Vector Machine (SVM):**
+  - Regression with RBF kernel
+  - Model saved as `svm_weather_model.pkl`
+- **Model Evaluation:**
+  - Mean Squared Error (MSE), R² Score, Mean Absolute Error (MAE)
+  - Comparison of predicted vs. actual sunshine hours
+
+### 3. **Time Series Forecasting with Prophet**
+
+- Data preparation for Prophet (`ds` and `y` columns)
+- Model fitting and future forecasting (1 year ahead)
+- Visualization of forecast, trend, seasonality, and confidence intervals
+- Business interpretation for solar energy, agriculture, and tourism
+
+### 4. **Interactive Visualization**
+
+- Interactive time series plot using Plotly for ROMA_sunshine
+
+---
+
+## How to Run
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/weather-prediction.git
+   cd weather-prediction
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   Or install key packages individually:
+
+   ```bash
+   pip install numpy pandas matplotlib seaborn scikit-learn statsmodels prophet plotly joblib
+   ```
+
+3. **Launch Jupyter Notebook:**
+
+   ```bash
+   jupyter notebook
+   ```
+
+   Open `weather-prediction.ipynb` and run the cells in order.
+
+4. **(Optional) Run scripts:**
+   - For OpenCV-related tasks, see `cv.py`.
+
+---
+
+## Results and Visualizations
+
+- **Time Series Plots:** Show sunshine trends and seasonality for Rome.
+- **Decomposition:** Visualizes trend, seasonality, and residuals in sunshine data.
+- **Feature Importance:** Bar plots showing which weather variables most influence sunshine prediction.
+- **Model Performance:** Metrics and comparison tables for Random Forest and SVM.
+- **Prophet Forecast:** Forecast plots with confidence intervals and business interpretation.
+- **Interactive Plotly Graphs:** Explore sunshine data interactively in your browser.
+
+---
+
+## Requirements
+
+- Python 3.8+
+- numpy
+- pandas
+- matplotlib
+- seaborn
+- scikit-learn
+- statsmodels
+- prophet
+- plotly
+- joblib
+
+Install all requirements with:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## References
+
+- [Prophet Documentation](https://facebook.github.io/prophet/docs/quick_start.html)
+- [Scikit-learn Documentation](https://scikit-learn.org/)
+- [Plotly Documentation](https://plotly.com/python/)
+- [Statsmodels Documentation](https://www.statsmodels.org/)
+
+---
+
+## License
+
+This project is for educational and research purposes. Please cite the data source if you use the dataset in your own work.
+
+---
+
+**Contact:**  
+For questions or contributions, please open an issue or pull request on GitHub.
